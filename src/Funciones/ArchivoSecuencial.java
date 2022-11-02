@@ -40,8 +40,8 @@ public class ArchivoSecuencial {
                             //Si el registro esta deshabilitado se regresa un null
                                 return "null";
                             }
-                            LecturaArchivo.close();
-                            LeerArchivo.close();
+                           // LecturaArchivo.close();
+                            //LeerArchivo.close();
                             return Linea;
                         }
                     }

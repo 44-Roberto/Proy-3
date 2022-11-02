@@ -154,6 +154,7 @@ public class Playlist extends javax.swing.JFrame {
            //Valido el codigo
             String[][] fileInfo = new String[9][2];
              String[][] fileInfo2 = new String[9][2];
+             String[] LineaLista;
             ArchivoSecuencial list = new ArchivoSecuencial();
             fileInfo= list.getDescriptor(userDec);
             fileInfo2= list.getDescriptor(bitacoraDesc);
@@ -172,13 +173,39 @@ public class Playlist extends javax.swing.JFrame {
             
             String Informacion = String.join("|",Usuario,NombreCancion,Usuario,dt,"1" );
             String strError="";
-            String llave=String.join("|",Usuario+NombreCancion);//Nombre playlist, pero no le cambié nombre jeje
-            ArchivoSecuencial as = new ArchivoSecuencial();            
-            as.Add(Usuario, Informacion, bitacoraUsersPath, userPath, bitacoraDesc, userDec, Usuario, true);            
+            String llave=String.join("|",Usuario,NombreCancion);//Nombre playlist, pero no le cambié nombre jeje
+            ArchivoSecuencial as = new ArchivoSecuencial();      
+           //***********************
+            ArrayList<String> listaPlaylist = new ArrayList<>();
+            listaPlaylist=as.getAll(l1.usertx, "C:\\MEIA\\listas_canciones.txt", "C:\\MEIA\\bitacora_listas_canciones.txt");
+            String[] Listas;
+            int h=0;
+        for(int i=0; i<listaPlaylist.size();i++)
+        {
+             Listas=as.getArreglo(listaPlaylist.get(i));
+           if(l1.usertx.equals(Listas[0])&&(NombreCancion.equals(Listas[1])))//Imprime solo las playlist de la misma persona
+            {
+                h=1;
+                
+                
+            }
+        }
+            //************************
+          if(h==0)
+          {
+               as.Add(Usuario, Informacion, bitacoraUsersPath, userPath, bitacoraDesc, userDec, Usuario, true);     
+                Menu m1=new Menu();
+                m1.setVisible(true);
+                this.dispose();
+           }
+           else
+           {
+                JOptionPane.showMessageDialog(null, "La playlist del usuario está repetida");
+           }
+                
+                
+           
             
-            Menu m1=new Menu();
-            m1.setVisible(true);
-            this.dispose();
         }
         else
         {
