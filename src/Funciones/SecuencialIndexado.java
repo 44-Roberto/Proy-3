@@ -54,22 +54,25 @@ public class SecuencialIndexado {
         if (Integer.parseInt(descriptor[6][1]) == 0) {
             return null;
         }
-        int pos = Integer.parseInt(descriptor[5][1]) - 1;        
+        int keyLength = key.length();        
+        int pos = Integer.parseInt(descriptor[5][1]);        
         ArrayList<String> indice = getIndice(pathInd);
-        while(pos != -1){            
-            String temporal = indice.get(pos);
-            if (temporal.contains(key) && temporal.endsWith("1")) {
-                resultado.add(temporal);
-            }else{
-                String[] reg = temporal.split("[|]");
-                int p = reg.length -2;
-                if (reg[p].equals("null")) {
-                    break;
-                }else{
-                    pos = Integer.parseInt(reg[5]);
-                }
+        String registro = indice.get(pos - 1);
+        String keyReg = registro.substring(6, 6 + keyLength);
+        var temporal = registro.split("[|]");
+        int p = temporal.length - 2;
+        while(!temporal[p].equals("null")){
+            if(key.equals(keyReg)){
+                resultado.add(registro);
             }
-        }                
+            pos = Integer.parseInt(temporal[p]);
+            registro = indice.get(pos - 1);
+            keyReg = registro.substring(6, 6 + keyLength);
+            temporal = registro.split("[|]");
+        }
+        if(key.equals(keyReg)){
+            resultado.add(registro);
+        }
         return resultado;
     }
     
