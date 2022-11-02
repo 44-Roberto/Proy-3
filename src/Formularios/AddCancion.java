@@ -104,6 +104,7 @@ public class AddCancion extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre de la canción");
 
+        JBTNVolver.setBackground(new java.awt.Color(102, 102, 102));
         JBTNVolver.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         JBTNVolver.setForeground(new java.awt.Color(255, 255, 255));
         JBTNVolver.setText("Volver");
@@ -208,10 +209,7 @@ public String RutaCancion="";
     public int codigo=0;
     private void JBTNAgregarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTNAgregarCancionActionPerformed
         //Comienzo con el Secuencial de la cancion
-        codigo++;
-         
-        
-        
+       
         Login l1 = new Login();
         String bitacoraUsersPath="C:\\MEIA\\bitacora_canciones.txt"; //Dirección
             String userPath = "C:\\MEIA\\canciones.txt";
@@ -224,9 +222,16 @@ public String RutaCancion="";
             fileInfo= list.getDescriptor(userDec);
             fileInfo2= list.getDescriptor(bitacoraDesc);
             
-            codigo=Integer.parseInt(fileInfo[6][1].trim())+Integer.parseInt(fileInfo2[6][1].trim())+1;
-            
-            
+            codigo=Integer.parseInt(fileInfo[5][1].trim())+Integer.parseInt(fileInfo2[5][1].trim())+1;
+           /* String COD="";
+            if(codigo<10)
+            {
+                COD ="0"+codigo+"";
+            }
+            else
+            {
+                COD=codigo+"";
+            }*/
             
             //Llenar
             String NombreCancion = JTFName.getText(),
@@ -239,7 +244,7 @@ public String RutaCancion="";
             String dt = dtf.format(date);
             
             
-            String Informacion = String.join("|", codigo+"",NombreCancion,Artista,PathCancion,Usuario,dt,"1" );
+            String Informacion = String.join("|",codigo+"",NombreCancion,Artista,PathCancion,Usuario,dt,"1" );
             String strError="";
             
             ArchivoSecuencial as = new ArchivoSecuencial();            

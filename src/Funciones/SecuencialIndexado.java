@@ -73,7 +73,7 @@ public class SecuencialIndexado {
         return resultado;
     }
     
-    public void Add(String key, String ingreso, String pathInd, String IndDesc, String user){        
+    public void Add(String key, String ingreso,String pathInd, String IndDesc, String user){        
         String[][] DescriptorInd = getDescriptorInd(IndDesc); //Se genera el dec del indice
         
         String fechaMod;
@@ -107,7 +107,7 @@ public class SecuencialIndexado {
             createBlock("C:\\MEIA\\bloque_" + bloque + ".txt", user);//Se un nuevo bloque
             DescriptorInd[10][1] = bloque + "";
             setDescriptor(DescriptorInd, IndDesc, 11);
-            Add(key, ingreso, pathInd, IndDesc, user);
+            Add(key, ingreso,pathInd, IndDesc, user);
             
             return;            
         }
@@ -119,7 +119,11 @@ public class SecuencialIndexado {
         String info, error = "";
         if (reg == 0) {
             reg += 1;
-            info = String.join("|", reg + "", bloque + "." + cantBloque, key, "null", "1" );
+            //*******Manejar strings
+            String regi=reg+"";
+            String posi=bloque+"."+cantBloque;
+                        
+            info = String.join("|", regi,posi,key,"null","1" );
             LlenarArchivo(pathInd, info, error);
             DescriptorInd[3][1] = dtf.format(LocalDateTime.now()); //Fecha mod
             DescriptorInd[4][1] = user; //Usuario mod
@@ -136,7 +140,11 @@ public class SecuencialIndexado {
             String registro = indice.get(pos - 1);
             String keyReg = registro.substring(6, 6 + keyLength);            
             if (key.compareTo(keyReg) < 0) {//El nuevo registro es menor que el de la posición inicial
-                info = String.join("|", reg + "", bloque + "." + cantBloque, key, pos + "", "1" );
+                //****Manejo strings
+                String regi=reg+"";
+                String posi=bloque+"."+cantBloque;
+                String sig=pos+"";
+                info = String.join("|",regi,posi,key,sig,"1");
                 DescriptorInd[5][1] = reg + ""; //Se actualiza el descriptor 
                 indice.add(info);
             }else{
@@ -157,7 +165,11 @@ public class SecuencialIndexado {
                         String algo = String.join("|", aux);
                         indice.remove(posAnt - 1);
                         indice.add(posAnt - 1, algo);
-                        info = String.join("|", reg + "", bloque + "." + cantBloque, key, posT + "", "1" );
+                        //*******Manejar string
+                        String regi=reg+"";
+                        String posi=bloque+"."+cantBloque;
+                        String sig=posT+"";
+                        info = String.join("|",regi,posi,key,sig,"1");
                         indice.add(info); 
                         flag = true;
                         break;
@@ -171,7 +183,10 @@ public class SecuencialIndexado {
                     String aux = String.join("|", temporal);
                     indice.remove(posAnt - 1);
                     indice.add(posAnt - 1, aux);
-                    info = String.join("|", reg + "", bloque + "." + cantBloque, key, "null", "1" );
+                    //**Separo por strings
+                    String regi=reg+"";
+                    String posi=bloque+"."+cantBloque;
+                    info = String.join("|",regi,posi,key,"null","1");
                     indice.add(info);
                 }
             }

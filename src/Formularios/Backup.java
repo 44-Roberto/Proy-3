@@ -27,6 +27,7 @@ public class Backup extends javax.swing.JFrame {
      */
     public Backup() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -29,6 +29,7 @@ public class Playlist extends javax.swing.JFrame {
      */
     public Playlist() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -136,7 +137,9 @@ public class Playlist extends javax.swing.JFrame {
 
     private void JBTNVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTNVolverActionPerformed
         // TODO add your handling code here:
-        
+        Menu m1 = new Menu();
+        m1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_JBTNVolverActionPerformed
 
     private void JBTNCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTNCrearActionPerformed
@@ -167,9 +170,9 @@ public class Playlist extends javax.swing.JFrame {
             String dt = dtf.format(date);
             
             
-            String Informacion = String.join("|",Usuario,NombreCancion,codigo+"",Usuario,dt,"1" );
+            String Informacion = String.join("|",Usuario,NombreCancion,Usuario,dt,"1" );
             String strError="";
-            
+            String llave=String.join("|",Usuario+NombreCancion);//Nombre playlist, pero no le cambié nombre jeje
             ArchivoSecuencial as = new ArchivoSecuencial();            
             as.Add(Usuario, Informacion, bitacoraUsersPath, userPath, bitacoraDesc, userDec, Usuario, true);            
             

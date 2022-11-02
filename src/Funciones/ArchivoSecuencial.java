@@ -13,6 +13,8 @@ import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author AndresLima
@@ -271,7 +273,12 @@ public class ArchivoSecuencial {
             Logger.getLogger(ArchivoSecuencial.class.getName()).log(Level.SEVERE, null, ex);
         }                                
     }
-    
+    public String[] getArreglo(String Linea)
+    {
+        String[] arreglo =Linea.split("[|]");
+        
+        return arreglo;
+    }
     public ArrayList<String> getAll(String id, String pathMaster, String pathBit){
         ArrayList<String> resultado = new ArrayList<>();
         File bit = new File(pathBit);
@@ -292,8 +299,8 @@ public class ArchivoSecuencial {
                             //Si el registro esta deshabilitado se regresa un null
                                 continue;
                             }
-                            LecturaArchivo.close();
-                            LeerArchivo.close();
+                            //LecturaArchivo.close();
+                            //LeerArchivo.close();
                             resultado.add(Linea);
                         }
                     }
@@ -326,8 +333,8 @@ public class ArchivoSecuencial {
                             //Si el registro esta deshabilitado se regresa continua
                                 continue;
                             }
-                            LecturaArchivo.close();
-                            LeerArchivo.close();
+                           // LecturaArchivo.close();
+                            //LeerArchivo.close();
                             resultado.add(Linea);
                         }
                     }
