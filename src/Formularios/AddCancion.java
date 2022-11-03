@@ -185,7 +185,7 @@ public String RutaCancion="";
     private void JBRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBRutaActionPerformed
         // TODO add your handling code here:
         JBTNAgregarCancion.setEnabled(true);
-        JFileChooser dialogo = new JFileChooser("C:\\MEIA");
+        JFileChooser dialogo = new JFileChooser("C:\\MEIA\\canciones");
 
         File ficheroImagen;
         String rutaArchivo;
