@@ -30,6 +30,7 @@ public class Menu extends javax.swing.JFrame {
         }else{
             rol_lbl.setText("Usuario");
             JBTN_IngresarUser.setEnabled(false);
+            JBTSong.setEnabled(false);
             JBTN_backup.setEnabled(false);
             JBTN_search.setEnabled(false);
         }

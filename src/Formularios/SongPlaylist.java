@@ -266,6 +266,7 @@ public class SongPlaylist extends javax.swing.JFrame {
                 DirIndice="C:\\MEIA\\indice.txt",
                 DirdescIndice="C:\\MEIA\\desc_indice.txt";
         Login l1= new Login();
+        String admin=ObtenerAdmin();
         String Cancion=JTFCancion.getText();
         String Playlist=JTFLista.getText();
         SecuencialIndexado si = new SecuencialIndexado();
@@ -273,10 +274,10 @@ public class SongPlaylist extends javax.swing.JFrame {
             LocalDateTime date = LocalDateTime.now();
             String dt = dtf.format(date);
         //Obtener codigo de la cancion
-        String codigo="";
+        int codigo=0;
         ArchivoSecuencial as = new ArchivoSecuencial();
         ArrayList<String> listaCancion = new ArrayList<>();
-        listaCancion=as.getAll(l1.usertx, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
+        listaCancion=as.getAll(admin, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
         String[] Canciones;
         String User=l1.usertx;
          for(int i=0; i<listaCancion.size();i++)
@@ -285,16 +286,20 @@ public class SongPlaylist extends javax.swing.JFrame {
             
             if(Canciones[1].equals(Cancion))
             {
-                codigo=Canciones[0];
+                codigo=Integer.parseInt(Canciones[0]);
             }
           
         }
         
-        String informacion=String.join("|",User,Playlist,codigo,User,dt,"1");
-        String llave=String.join("|",User,Playlist,codigo);
+        String informacion=String.join("|",User,Playlist,codigo+"",User,dt,"1");
+        String llave=String.join("|",User,Playlist,codigo+"");
         //Validaciones para agregar al index
-         si.Add(llave,informacion,DirIndice, DirdescIndice, User);
+         si.Add(llave,informacion,DirIndice, DirdescIndice,User);
         
+         
+         Menu m1 = new Menu();
+        m1.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_JBTNAñadirActionPerformed
 
     /**

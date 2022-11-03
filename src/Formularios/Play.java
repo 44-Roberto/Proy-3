@@ -106,7 +106,7 @@ public class Play extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre playlist");
+        jLabel2.setText("Mostrar canciones para esta playlist");
 
         JTFCancion.setBackground(new java.awt.Color(102, 102, 102));
         JTFCancion.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -148,39 +148,32 @@ public class Play extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTBNMostrarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBTNReproducir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTFLista, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JBTNMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(JTBNMostrarCancion)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(JBTNMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(JTBNVolver)
-                                .addGap(42, 42, 42)
-                                .addComponent(JTFCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(JTFLista, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)))
+                                .addGap(44, 44, 44)
+                                .addComponent(JBTNDetener)
+                                .addGap(54, 54, 54)
+                                .addComponent(JTBNVolver))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(189, 189, 189))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(JBTNReproducir)
-                        .addGap(18, 18, 18)
-                        .addComponent(JBTNDetener)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,26 +185,23 @@ public class Play extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(JBTNMostrar)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(JTBNMostrarCancion)
-                            .addComponent(jLabel2))
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTBNVolver))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(JTFCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTBNMostrarCancion))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JTFCancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBTNReproducir))))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBTNReproducir)
+                    .addComponent(JTBNVolver)
                     .addComponent(JBTNDetener))
-                .addGap(26, 26, 26))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,7 +212,7 @@ public class Play extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -247,20 +237,60 @@ public class Play extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_JBTNMostrarActionPerformed
-
+public String ObtenerAdmin()
+    {
+        ArchivoSecuencial as = new ArchivoSecuencial();
+        String[][] ArregloLinea=new String[9][2];
+        ArregloLinea=as.getDescriptor("C:\\MEIA\\desc_usuario.txt");
+        return ArregloLinea[2][1];
+    }
     private void JTBNMostrarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBNMostrarCancionActionPerformed
         // TODO add your handling code here:
         JTAListas.setText("");
+        String DirIndice="C:\\MEIA\\indice.txt",
+        DirdescIndice="C:\\MEIA\\desc_indice.txt";
         Login l1= new Login();
         ArchivoSecuencial as = new ArchivoSecuencial();
+        SecuencialIndexado si = new SecuencialIndexado();
+        String admin=ObtenerAdmin();
         ArrayList<String> listaCancion = new ArrayList<>();
-        listaCancion=as.getAll(l1.usertx, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
+        ArrayList<String> listaLista = new ArrayList<>();
+        ArrayList<String> listaPlaylist = new ArrayList<>();
+        listaCancion=as.getAll(admin, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
+        listaLista=as.getAll(l1.usertx, "C:\\MEIA\\listas_canciones.txt", "C:\\MEIA\\bitacora_listas_canciones.txt");
+        listaPlaylist=si.getAll(l1.usertx, DirIndice, DirdescIndice);
         String[] Canciones;
+         String[] Playlist;
+         String[] Listas;
+         int au=0;
         for(int i=0; i<listaCancion.size();i++)
         {
             Canciones=as.getArreglo(listaCancion.get(i));
+            for(int j=0;j<listaPlaylist.size();j++)
+            {
+                Playlist=as.getArreglo(listaPlaylist.get(j));
+               // JTAListas.append(listaPlaylist.get(j)+System.getProperty("line.separator" ));
+               for(int h=0;h<listaLista.size();h++)
+               {
+                   Listas=as.getArreglo(listaLista.get(h));
+                   if(Listas[0].equals(Playlist[2]))//User
+                   {
+                       if(Listas[1].equals(Playlist[3]))//Playlist
+                       {
+                          if(Canciones[0].equals(Playlist[4]))//Cancion
+                             {
+                    
+                              JTAListas.append(Canciones[1]+System.getProperty("line.separator" ));
+                    
+                             } 
+                       }
+                   }
+               }
+                
 
-            JTAListas.append(Canciones[1]+System.getProperty("line.separator" ));
+            
+            }
+            
 
         }
     }//GEN-LAST:event_JTBNMostrarCancionActionPerformed
@@ -277,7 +307,7 @@ public MP3Player mp3Player;
 
     private void JBTNReproducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTNReproducirActionPerformed
         // TODO add your handling code here:
-        String DirCanciones ="C:\\MEIA\\canciones.txt",
+       /* String DirCanciones ="C:\\MEIA\\canciones.txt",
         DirBitCanciones="C:\\MEIA\\bitacora_canciones.txt",
         DirListas ="C:\\MEIA\\listas_canciones.txt",
         DirBitListas="C:\\MEIA\\bitacora_listas_canciones.txt",
@@ -339,8 +369,26 @@ public MP3Player mp3Player;
                 }
             }
             
-        }
-        
+        }*/
+        //****Prueba****
+         String DirCanciones ="C:\\MEIA\\canciones.txt",
+        DirBitCanciones="C:\\MEIA\\bitacora_canciones.txt";
+         Login l1= new Login();
+         String Cancion=JTFCancion.getText();
+         ArchivoSecuencial as = new ArchivoSecuencial();
+         ArrayList<String> listaCancion = new ArrayList<>();
+         listaCancion=as.getAll(l1.usertx, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
+         String[] Canciones;
+         for(int i=0;i<listaCancion.size();i++)
+         {
+             Canciones=as.getArreglo(listaCancion.get(i));
+             if(Canciones[1].equals(Cancion))
+             {
+                 RutaCancion=Canciones[3];
+             }
+         }
+         
+         
         f=new File(RutaCancion);
         mp3Player =new  MP3Player(f);
         mp3Player.play();
