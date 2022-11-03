@@ -200,12 +200,19 @@ public class SongPlaylist extends javax.swing.JFrame {
     //*****************
     
     
-    
+    public String ObtenerAdmin()
+    {
+        ArchivoSecuencial as = new ArchivoSecuencial();
+        String[][] ArregloLinea=new String[9][2];
+        ArregloLinea=as.getDescriptor("C:\\MEIA\\desc_usuario.txt");
+        return ArregloLinea[2][1];
+    }
     //***************
     
     private void JBTNMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBTNMostrarActionPerformed
         // TODO add your handling code here:
         JTAListas.setText("");
+        
         Login l1= new Login();
         ArchivoSecuencial as = new ArchivoSecuencial();
         ArrayList<String> listaPlaylist = new ArrayList<>();
@@ -234,10 +241,11 @@ public class SongPlaylist extends javax.swing.JFrame {
     private void JTBNMostrarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTBNMostrarCancionActionPerformed
         // TODO add your handling code here:
         JTAListas.setText("");
+        String admin=ObtenerAdmin();
         Login l1= new Login();
         ArchivoSecuencial as = new ArchivoSecuencial();
         ArrayList<String> listaCancion = new ArrayList<>();
-        listaCancion=as.getAll(l1.usertx, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
+        listaCancion=as.getAll(admin, "C:\\MEIA\\canciones.txt", "C:\\MEIA\\bitacora_canciones.txt");
         String[] Canciones;
         for(int i=0; i<listaCancion.size();i++)
         {

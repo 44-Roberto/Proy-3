@@ -34,6 +34,7 @@ public class Play extends javax.swing.JFrame {
      */
     public Play() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
