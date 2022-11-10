@@ -354,4 +354,74 @@ public class ArchivoSecuencial {
         }
         return resultado;
     }
+    
+    public ArrayList<String> getAll(String pathMaster, String pathBit){
+        ArrayList<String> resultado = new ArrayList<>();
+        File bit = new File(pathBit);
+        File mast = new File(pathMaster);
+        FileReader LecturaArchivo;
+        BufferedReader LeerArchivo;        
+        if (bit.exists()) {
+            try {           
+                LecturaArchivo = new FileReader(bit);
+                LeerArchivo = new BufferedReader(LecturaArchivo);
+                String Linea;                
+                Linea=LeerArchivo.readLine();                
+                while(Linea != null){
+                    if (!"".equals(Linea)) {                                                                        
+                        if (!Linea.endsWith("1")) {
+                            //Si el registro esta deshabilitado se regresa un null
+                            continue;
+                        }
+                        
+                        
+                        resultado.add(Linea);
+                    }
+                    Linea=LeerArchivo.readLine();
+                }
+                LecturaArchivo.close();
+                LeerArchivo.close();
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ArchivoSecuencial.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            } catch (IOException ex) {
+                Logger.getLogger(ArchivoSecuencial.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+        }   
+        
+        if (mast.exists()) {
+            try {           
+                LecturaArchivo = new FileReader(mast);
+                LeerArchivo = new BufferedReader(LecturaArchivo);
+                String Linea;                
+                Linea=LeerArchivo.readLine();
+                String[] registro;
+                while(Linea != null){
+                    if (!"".equals(Linea)) {                                                                        
+                        if (!Linea.endsWith("1")) {
+                            //Si el registro esta deshabilitado se regresa continua
+                            continue;
+                        }
+                                                
+                        resultado.add(Linea);
+                    }
+                    Linea=LeerArchivo.readLine();
+                }
+                LecturaArchivo.close();
+                LeerArchivo.close();
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(ArchivoSecuencial.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            } catch (IOException ex) {
+                Logger.getLogger(ArchivoSecuencial.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+        }
+        return resultado;
+    }
 }
