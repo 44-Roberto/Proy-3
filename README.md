@@ -1,2 +1,2 @@
 # Proy-3
-quwfasdf asdf
+Solución al proyecto 3
